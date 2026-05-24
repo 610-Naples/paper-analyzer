@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>论文智能评估系统</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .upload-area {
+            border: 2px dashed #667eea;
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+        
+        .upload-area:hover {
+            border-color: #764ba2;
+            background-color: #f8f9ff;
+        }
+        
+        .upload-area.dragover {
+            border-color: #764ba2;
+            background-color: #f0f0ff;
+        }
+        
+        .upload-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        
+        .upload-text {
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .upload-subtext {
+            color: #999;
+            font-size: 12px;
+        }
+        
+        input[type="file"] {
+            display: none;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-analyze {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-analyze:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-analyze:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .btn-clear {
+            background: #f0f0f0;
+            color: #333;
+        }
+        
+        .btn-clear:hover {
+            background: #e0e0e0;
+        }
+        
+        .file-info {
+            background: #f9f9f9;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        .file-info.show {
+            display: block;
+        }
+        
+        .file-info p {
+            color: #666;
+            font-size: 13px;
+            margin: 5px 0;
+        }
+        
+        .file-name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .loading.show {
+            display: block;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .results {
+            display: none;
+            margin-top: 30px;
+        }
+        
+        .results.show {
+            display: block;
+        }
+        
+        .score-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .score-card h3 {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+        
+        .score-value {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .score-grade {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .analysis-item {
+            background: #f9f9f9;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        
+        .analysis-item h4 {
+            color: #333;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        
+        .analysis-item p {
+            color: #666;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+        
+        .error {
+            background: #fee;
+            color: #c33;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        .error.show {
+            display: block;
+        }
+        
+        .rubric-scores {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .rubric-item {
+            background: white;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .rubric-item .score {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 16px;
+        }
+        
+        .rubric-item .name {
+            color: #666;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📄 论文智能评估系统</h1>
+            <p>基于专业评分标准的AI学位论文深度评估</p>
+        </div>
+        
+        <div class="error" id="error"></div>
+        
+        <div class="upload-area" id="uploadArea" ondrop="handleDrop(event)" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)">
+            <div class="upload-icon">📤</div>
+            <div class="upload-text">点击或拖拽上传PDF论文</div>
+            <div class="upload-subtext">支持PDF格式，最大50MB</div>
+            <input type="file" id="fileInput" accept=".pdf" onchange="handleFileSelect(event)">
+        </div>
+        
+        <div class="file-info" id="fileInfo">
+            <div class="file-name" id="fileName"></div>
+            <p>✓ 文件已选择，准备分析</p>
+        </div>
+        
+        <div class="button-group">
+            <button class="btn-analyze" id="analyzeBtn" onclick="analyzeFile()">开始分析 🔍</button>
+            <button class="btn-clear" onclick="clearFile()">清除文件</button>
+        </div>
+        
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>正在分析论文，请稍候...</p>
+        </div>
+        
+        <div class="results" id="results">
+            <div class="score-card">
+                <h3>总体评分</h3>
+                <div class="score-value" id="overallScore">-</div>
+                <div class="score-grade" id="overallGrade">-</div>
+            </div>
+            
+            <div class="analysis-item">
+                <h4>📊 论文信息</h4>
+                <p id="paperInfo"></p>
+            </div>
+            
+            <div class="analysis-item">
+                <h4>✅ 格式检查</h4>
+                <p id="formatCheck"></p>
+            </div>
+            
+            <div class="analysis-item">
+                <h4>📈 评分详情</h4>
+                <div class="rubric-scores" id="rubricScores"></div>
+            </div>
+            
+            <div class="analysis-item">
+                <h4>💡 专业建议</h4>
+                <p id="professionalFeedback"></p>
+            </div>
+            
+            <div class="analysis-item">
+                <h4>📋 论文结构</h4>
+                <p id="structureAnalysis"></p>
+            </div>
+            
+            <button class="btn-clear" style="width: 100%; margin-top: 20px;" onclick="clearResults()">返回上传</button>
+        </div>
+    </div>
+    
+    <script>
+        const API_BASE = 'http://localhost:8000';
+        let selectedFile = null;
+        
+        // 文件选择
+        document.getElementById('uploadArea').addEventListener('click', () => {
+            document.getElementById('fileInput').click();
+        });
+        
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            if (file) {
+                selectedFile = file;
+                showFileInfo(file);
+            }
+        }
+        
+        function handleDragOver(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            document.getElementById('uploadArea').classList.add('dragover');
+        }
+        
+        function handleDragLeave(event) {
+            event.preventDefault();
+            document.getElementById('uploadArea').classList.remove('dragover');
+        }
+        
+        function handleDrop(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            document.getElementById('uploadArea').classList.remove('dragover');
+            
+            const files = event.dataTransfer.files;
+            if (files.length > 0) {
+                const file = files[0];
+                if (file.type === 'application/pdf') {
+                    selectedFile = file;
+                    showFileInfo(file);
+                    document.getElementById('fileInput').files = files;
+                } else {
+                    showError('只支持PDF格式的文件');
+                }
+            }
+        }
+        
+        function showFileInfo(file) {
+            document.getElementById('fileName').textContent = file.name;
+            document.getElementById('fileInfo').classList.add('show');
+        }
+        
+        function analyzeFile() {
+            if (!selectedFile) {
+                showError('请先选择文件');
+                return;
+            }
+            
+            const btn = document.getElementById('analyzeBtn');
+            btn.disabled = true;
+            document.getElementById('loading').classList.add('show');
+            document.getElementById('error').classList.remove('show');
+            
+            uploadAndAnalyze(selectedFile);
+        }
+        
+        function uploadAndAnalyze(file) {
+            const formData = new FormData();
+            formData.append('file', file);
+            
+            fetch(`${API_BASE}/upload`, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                document.getElementById('loading').classList.remove('show');
+                document.getElementById('analyzeBtn').disabled = false;
+                displayResults(data);
+            })
+            .catch(error => {
+                document.getElementById('loading').classList.remove('show');
+                document.getElementById('analyzeBtn').disabled = false;
+                showError(`分析失败: ${error.message}`);
+                console.error('Error:', error);
+            });
+        }
+        
+        function displayResults(data) {
+            const analysis = data.analysis;
+            
+            // 显示总分
+            const overallScore = analysis.overall_score;
+            document.getElementById('overallScore').textContent = 
+                overallScore.final_score ? overallScore.final_score : 'N/A';
+            document.getElementById('overallGrade').textContent = 
+                overallScore.grade || 'N/A';
+            
+            // 显示论文信息
+            const paperInfo = data.paper_info;
+            document.getElementById('paperInfo').innerHTML = `
+                <strong>标题:</strong> ${paperInfo.title || '未检测到'}<br>
+                <strong>章节数:</strong> ${paperInfo.chapters}<br>
+                <strong>图数量:</strong> ${paperInfo.figures}<br>
+                <strong>表数量:</strong> ${paperInfo.tables}<br>
+                <strong>估计字数:</strong> ${Math.round(paperInfo.estimated_length / 300)} 字
+            `;
+            
+            // 显示格式检查
+            const formatCheck = analysis.format_check;
+            const issuesText = formatCheck.issues.length > 0 ? 
+                formatCheck.issues.join(', ') : '无严重问题';
+            document.getElementById('formatCheck').innerHTML = `
+                目录: ${formatCheck.toc_present ? '✓ 完整' : '✗ 缺失'}<br>
+                <strong>问题:</strong> ${issuesText}
+            `;
+            
+            // 显示评分详情
+            const rubricScores = analysis.rubric_scores;
+            let rubricHTML = '';
+            rubricScores.forEach(score => {
+                if (score.section !== 'final_score') {
+                    rubricHTML += `
+                        <div class="rubric-item">
+                            <div class="score">${score.actual_score || 0}/${score.max_score}</div>
+                            <div class="name">${score.name}</div>
+                        </div>
+                    `;
+                }
+            });
+            document.getElementById('rubricScores').innerHTML = rubricHTML;
+            
+            // 显示专业反馈
+            const feedback = analysis.professional_feedback;
+            document.getElementById('professionalFeedback').textContent = 
+                feedback.substring(0, 300) + (feedback.length > 300 ? '...' : '');
+            
+            // 显示结构分析
+            document.getElementById('structureAnalysis').innerHTML = `
+                <strong>检测到的章节:</strong><br>
+                ${paperInfo.chapters > 0 ? '论文结构完整' : '未检测到清晰的章节结构'}
+            `;
+            
+            document.getElementById('results').classList.add('show');
+        }
+        
+        function showError(message) {
+            const errorEl = document.getElementById('error');
+            errorEl.textContent = message;
+            errorEl.classList.add('show');
+        }
+        
+        function clearFile() {
+            selectedFile = null;
+            document.getElementById('fileInput').value = '';
+            document.getElementById('fileInfo').classList.remove('show');
+            document.getElementById('error').classList.remove('show');
+        }
+        
+        function clearResults() {
+            document.getElementById('results').classList.remove('show');
+            clearFile();
+        }
+    </script>
+</body>
+</html>
