@@ -361,59 +361,59 @@ model="claude-3-haiku-20240307"  # 改为其他模型
 
 ---
 
-## 📞 需要帮助？
+## 📞 need help？
 
-### 检查系统状态
+### check system status
 ```bash
 cd /Users/siyuzhang/Desktop/KM/paper-analyzer
 source venv/bin/activate
 python test_system.py
 ```
 
-### 查看API文档
-启动服务后访问：
+### View the API documentation. 
+After starting the service, visit
 ```
 http://localhost:8000/docs
 ```
 
-### 调试模式
+### debug mode
 ```bash
 DEBUG=true python -m uvicorn backend/main:app --reload --log-level debug
 ```
 
 ---
 
-## ✨ 项目亮点
+## ✨ project highlights
 
-✅ **完全本地化** - 不依赖第三方评分平台  
-✅ **专业定制** - 基于教学论专家知识设计  
-✅ **易于扩展** - 清晰的模块化架构  
-✅ **成本低廉** - API成本 < 1元/篇  
-✅ **即插即用** - 开箱即用的MVP  
-✅ **活跃迭代** - 持续改进和新功能  
-
----
-
-## 🎊 恭喜！
-
-你现在拥有一个**完整的AI驱动论文评估系统**！
-
-### 下一步：
-1. **配置API Key** → 访问 https://console.anthropic.com/
-2. **启动服务** → 运行 `./start.sh`
-3. **上传论文** → 使用Web界面或API
-4. **获得评价** → 1-2分钟内得到专业反馈
-
-### 预期效果：
-- 📊 详细的评分报告
-- 💡 专业的改进建议
-- ✨ 自动化的学术评估
-- 🚀 显著提升教学效率
+✅ **Fully localized** - Not relying on third-party rating platforms
+✅ **professional tailor-made** - Designed based on the expert knowledge of pedagogy
+✅ **easy to enlarge** - A clear modular architecture 
+✅ **cost-less** - API cost < 1 dollar/file  
+✅ **Plug and play**  - out-of-the-box MVP 
+✅**active iteration **- continuous improvement and new features
 
 ---
 
-**项目位置:** `/Users/siyuzhang/Desktop/KM/paper-analyzer`
+## congratulations！
 
-**祝你使用愉快！**🎉
+now you have an **A complete AI-driven paper evaluation system**！
 
-如有任何问题，请查阅项目文档或运行系统检查。
+### next step：
+1. **Configure API Key** → 访问 https://console.anthropic.com/
+2. **activate server** → run `./start.sh`
+3. **upload file** → use Webpage or API
+4. **get score ranking** →Receive professional feedback within 1-2 minutes
+
+### Expected results:
+- 📊 detailed scoring report
+- 💡 professional improvement suggestions
+- ✨ automated academic assessment
+- 🚀 significantly enhance teaching efficiency
+
+---
+
+**project sited on:** `/Users/siyuzhang/Desktop/KM/paper-analyzer`
+
+
+
+If you have any questions, please refer to the project documentation or run the system check.
