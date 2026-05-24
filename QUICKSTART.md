@@ -1,21 +1,23 @@
-# 🚀 快速开始指南
+# 🚀 Quick Start Guide
 
-## 3分钟启动系统
+Get the Paper Analyzer system running in 3 minutes.
 
-### 1️⃣ 获取Claude API Key
+## Step 1️⃣: Get Claude API Key
 
-访问 [https://console.anthropic.com/](https://console.anthropic.com/) 获取免费的API Key
+Visit [https://console.anthropic.com/](https://console.anthropic.com/) to get a free API Key
 
-### 2️⃣ 配置环境变量
+New accounts receive **$5 free credits** - enough to test 200+ paper analyses.
+
+## Step 2️⃣: Configure Environment Variables
 
 ```bash
 cd /Users/siyuzhang/Desktop/KM/paper-analyzer
 
-# 编辑 .env 文件
+# Edit .env file
 nano .env
 ```
 
-替换为你的API Key：
+Replace with your API Key:
 ```
 ANTHROPIC_API_KEY=sk-ant-your-api-key-here
 DEBUG=True

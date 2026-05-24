@@ -1,30 +1,30 @@
-# 📖 VS Code 完整操作指南
+# 📖 VS Code Complete Operating Guide
 
-## 🎯 目标
+## 🎯 Goal
 
-在VS Code中完成以下5个步骤：
-1. ✅ 打开项目
-2. ✅ 阅读START_HERE.md
-3. ✅ 配置API Key
-4. ✅ 启动系统
-5. ✅ 上传论文
+Complete the following 5 steps in VS Code:
+1. ✅ Open project
+2. ✅ Read START_HERE.md
+3. ✅ Configure API Key
+4. ✅ Start system
+5. ✅ Upload thesis
 
 ---
 
-## 🚀 第1步：在VS Code中打开项目
+## 🚀 Step 1: Open Project in VS Code
 
-### 方法A：命令行（最快）
+### Method A: Command Line (Fastest)
 
 ```bash
-# 在终端中运行（任意位置）
+# Run in terminal (any location)
 code /Users/siyuzhang/Desktop/KM/paper-analyzer
 ```
 
-### 方法B：VS Code界面
+### Method B: VS Code Interface
 
-1. 点击 **File** → **Open Folder**
-2. 导航到 `/Users/siyuzhang/Desktop/KM/paper-analyzer`
-3. 点击 **Open**
+1. Click **File** → **Open Folder**
+2. Navigate to `/Users/siyuzhang/Desktop/KM/paper-analyzer`
+3. Click **Open**
 
 ---
 

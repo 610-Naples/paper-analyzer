@@ -1,17 +1,17 @@
-# 🎯 快速参考和行动计划
+# 🎯 Quick Reference and Action Plan
 
-## 📋 你现在拥有的文档
+## 📋 Documentation You Now Have
 
 ```
-项目根目录(/Users/siyuzhang/Desktop/KM/paper-analyzer)
+Project Root (/Users/siyuzhang/Desktop/KM/paper-analyzer)
 
-📖 快速入门文档
-├── START_HERE.md              ← 🚀 立即开始 （5分钟了解全貌）
-├── VS_CODE_GUIDE.md           ← 💻 VS Code详细步骤 （新手必读）
-├── QUICKSTART.md              ← ⚡ 快速问题解决
-├── README.md                  ← 📚 完整功能文档
-├── DEPLOYMENT_GUIDE.md        ← 🚀 发布和部署方案
-└── PROJECT_SUMMARY.md         ← 📊 项目总结
+📖 Getting Started Documents
+├── START_HERE.md              ← 🚀 Get Started (5 min overview)
+├── VS_CODE_GUIDE.md           ← 💻 VS Code Detailed Steps (beginners)
+├── QUICKSTART.md              ← ⚡ Quick Problem Solving
+├── README_EN.md               ← 📚 Complete Feature Documentation
+├── DEPLOYMENT_GUIDE.md        ← 🚀 Deployment Options
+└── PROJECT_SUMMARY.md         ← 📊 Project Summary
 
 🛠️ 工具和脚本
 ├── start.sh                   ← 🎬 一键启动

@@ -1,38 +1,39 @@
-# 🎯 最后一步：启动你的论文AI评估系统
+# 🎯 Getting Started - Paper Analyzer
 
-**恭喜！** 你的完整项目已经完成！ 👏  
-现在只需要3步启动系统。
+Congratulations! Your complete Paper Analyzer system is ready! 👏
 
----
-
-## 🔑 第1步：获取Claude API Key
-
-1. 访问：**https://console.anthropic.com/**
-2. 注册或登录
-3. 进入 **API Keys** 页面
-4. 点击 **Create Key** 创建新密钥
-5. **复制密钥** (形如: `sk-ant-xxx...`)
-
-> 💡 **提示**：新注册账户通常会获得免费额度($5)，足以测试200+篇论文分析
+Now it takes just 3 simple steps to launch the system.
 
 ---
 
-## 🔧 第2步：配置API Key
+## 🔑 Step 1: Get Claude API Key
+
+1. Visit: **https://console.anthropic.com/**
+2. Sign up or log in
+3. Go to **API Keys** section
+4. Click **Create Key** to generate a new key
+5. **Copy the key** (format: `sk-ant-xxx...`)
+
+> 💡 **Tip**: New registered accounts typically receive free credits ($5), enough to test 200+ paper analyses
+
+---
+
+## 🔧 Step 2: Configure API Key
 
 ```bash
-# 方式1：编辑.env文件 (推荐)
+# Method 1: Edit .env file (Recommended)
 cd /Users/siyuzhang/Desktop/KM/paper-analyzer
 nano .env
 
-# 找到这一行并替换：
+# Find this line and replace:
 # ANTHROPIC_API_KEY=sk-ant-your-api-key-here
-# 改为：
+# Change to:
 # ANTHROPIC_API_KEY=sk-ant-xxxxxxxxxxxxx
 ```
 
-或者直接运行：
+Or run directly:
 ```bash
-# 方式2：一键配置
+# Method 2: One-command configuration
 cat > /Users/siyuzhang/Desktop/KM/paper-analyzer/.env << 'EOF'
 ANTHROPIC_API_KEY=sk-ant-xxxxxxxxxxxxx
 DEBUG=True
@@ -41,13 +42,13 @@ MAX_FILE_SIZE=50000000
 EOF
 ```
 
-> ⚠️ **重要**：确保`.env`文件在项目根目录，不要提交到git
+> ⚠️ **Important**: Ensure `.env` file is in project root and do NOT commit it to git
 
 ---
 
-## 🚀 第3步：启动系统
+## 🚀 Step 3: Start the System
 
-### 最简单的方式（推荐）
+### Easiest Method (Recommended)
 
 ```bash
 cd /Users/siyuzhang/Desktop/KM/paper-analyzer
@@ -55,21 +56,21 @@ chmod +x start.sh
 ./start.sh
 ```
 
-### 或者手动启动
+### Or Manual Startup
 
 ```bash
-# 进入项目目录
+# Navigate to project directory
 cd /Users/siyuzhang/Desktop/KM/paper-analyzer
 
-# 激活虚拟环境
+# Activate virtual environment
 source venv/bin/activate
 
-# 启动后端服务
+# Start backend service
 cd backend
 python -m uvicorn main:app --reload
 ```
 
-**看到这个就表示成功了：** ✅
+**If you see this, you're successful:** ✅
 ```
 INFO:     Uvicorn running on http://127.0.0.1:8000
 INFO:     Reload enabled
@@ -77,7 +78,7 @@ INFO:     Reload enabled
 
 ---
 
-## 📱 现在开始使用！
+## 📱 Ready to Use!
 
 ### 方式1️⃣：Web界面 (最简单)
 

@@ -1,106 +1,152 @@
-# 论文智能评估系统 📄
+# 📄 Paper Analyzer - AI-Powered Academic Paper Assessment System
 
-一个集成Claude AI的专业学位论文评估助手，为数学教育、教学论等学科提供深度的学术评价和改进建议。
+**An intelligent thesis evaluation platform integrating Claude AI for professional academic assessment and feedback.**
 
-##  功能特性
+---
 
-- ✅ **PDF解析与结构识别** - 自动提取标题、章节、目录、图表
-- ✅ **文本智能分块** - 优化处理方式便于LLM分析
-- ✅ **专业评分体系** - 基于教学论/数学教育专家的Rubric评分
-- ✅ **Claude AI分析** - 深度内容分析、专业建议
-- ✅ **格式检查** - 检查目录、页码、参考文献等规范性
-- ✅ **图表评估** - 评估图表数量和适配度
-- ✅ **相似度检查** - 初步查重建议
-- ✅ **生成报告** - 导出评估结果（开发中）
+## 🎯 Project Overview
 
-## 📋 系统架构
+### Problem Statement
+Academic paper evaluation is a critical but time-consuming task:
+- ❌ Manual review takes **6-12 hours per thesis**
+- ❌ Evaluation criteria **lack standardization** across different reviewers
+- ❌ Students receive **limited, inconsistent feedback** for improvement
+- ❌ Limited scalability for institutions evaluating hundreds of papers
+
+### Our Solution
+**Paper Analyzer** automates and standardizes academic evaluation through:
+- ⚡ **Automated Analysis** - Complete thesis review in 1-2 minutes
+- 📊 **Standardized Scoring** - 6-dimensional rubric-based evaluation
+- 💡 **Professional Insights** - AI-generated improvement recommendations
+- 🎓 **Institutional Quality** - Production-ready backend architecture
+
+---
+
+## ✨ Key Features
+
+### 1. **Intelligent PDF Processing**
+- Automatic extraction of thesis content and structure
+- Title, chapter, and section identification
+- Figure/chart detection and counting
+- Metadata and statistical analysis
+- Multi-language support
+
+### 2. **Smart Text Chunking**
+- Recursive document splitting (2000 chars/chunk)
+- Context preservation (200-char overlap)
+- Token count estimation
+- Langchain integration for LLM optimization
+
+### 3. **Claude AI Integration**
+- Claude 3.5 Sonnet engine
+- Deep content analysis
+- Academic rigor assessment
+- Research depth evaluation
+- Teaching application analysis
+
+### 4. **Professional Scoring System**
+**6-Dimensional Evaluation Framework (Total: 100 points)**
+- **Format & Compliance (10%)** - Formatting, page numbers, references
+- **Structural Integrity (15%)** - Introduction, literature, methodology, conclusion
+- **Theoretical Foundation (25%)** - Frameworks, concepts, theoretical innovation
+- **Methodology (25%)** - Research methods, sampling, data analysis
+- **Innovation & Application (15%)** - Novelty, practical guidance value
+- **Academic Writing (10%)** - Expression, logic flow, terminology
+
+---
+
+## 🏗️ System Architecture
 
 ```
 User Upload PDF
-         ↓
-    PDF Parser (解析)
-         ↓
-   Text Chunking (分块)
-         ↓
-    Claude LLM Analysis (LLM分析)
-         ↓
-  Rubric Evaluator (评分)
-         ↓
-  Report Generator (报告生成)
-         ↓
-   Export (Word/PDF)
+        ↓
+   PDF Parser (pdfplumber)
+        ↓
+  Text Chunking (Langchain)
+        ↓
+Claude AI Analysis (Anthropic API)
+        ↓
+  Rubric Evaluation (6 dimensions)
+        ↓
+Report Generation (python-docx)
+        ↓
+   Result Export
 ```
 
-## 🛠️ 快速开始
+---
 
-### 1. 环境配置
+## 🚀 Quick Start
 
+### Prerequisites
+- Python 3.8 or higher
+- pip (Python package manager)
+- Claude API Key (free $5 credit available)
+
+### Installation
+
+**Step 1: Clone the Repository**
 ```bash
-# 克隆项目
-cd /Users/siyuzhang/Desktop/KM/paper-analyzer
+git clone https://github.com/YOUR_USERNAME/paper-analyzer.git
+cd paper-analyzer
+```
 
-# 创建Python虚拟环境
+**Step 2: Create Virtual Environment**
+```bash
 python3 -m venv venv
 source venv/bin/activate  # macOS/Linux
+```
 
-# 安装依赖
+**Step 3: Install Dependencies**
+```bash
 pip install -r requirements.txt
 ```
 
-### 2. 配置Claude API
-
+**Step 4: Configure API Key**
 ```bash
-# 复制环境变量文件
 cp .env.example .env
-
-# 编辑 .env 文件，添加你的API Key
-# ANTHROPIC_API_KEY=sk-ant-xxx
+# Edit .env and add your Claude API key
+nano .env
 ```
 
-### 3. 启动服务
-
+**Step 5: Start the Server**
 ```bash
-# 进入后端目录
-cd backend
+# Method A: Using startup script
+chmod +x start.sh
+./start.sh
 
-# 运行FastAPI服务
+# Method B: Manual startup
+cd backend
 python -m uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-服务将在 `http://localhost:8000` 运行
+---
 
-### 4. 测试API
-
-```bash
-# 查看API文档
-open http://localhost:8000/docs
-
-# 检查健康状态
-curl http://localhost:8000/health
-
-# 获取评分标准
-curl http://localhost:8000/rubrics
-```
-
-## 📁 项目结构
+## 📁 Project Structure
 
 ```
 paper-analyzer/
-├── backend/
-│   ├── main.py              # FastAPI应用入口
-│   ├── config.py            # 配置文件
-│   ├── pdf_parser.py        # PDF解析模块
-│   ├── chunking.py          # 文本分块模块
-│   ├── analyzer.py          # LLM分析引擎
-│   └── rubric.py            # 评分系统
-├── frontend/                # 前端（React/Vue）
-│   └── (待开发)
-├── data/
-│   ├── uploads/             # 上传的PDF存储
-│   └── rubrics/             # 自定义评分标准
-├── requirements.txt         # Python依赖
-├── .env.example             # 环境变量示例
-└── README.md
+├── backend/                          # Backend application
+│   ├── main.py                       # FastAPI application & routes
+│   ├── config.py                     # Configuration management
+│   ├── pdf_parser.py                 # PDF extraction & parsing
+│   ├── chunking.py                   # Intelligent text chunking
+│   ├── analyzer.py                   # Claude AI integration
+│   ├── rubric.py                     # Scoring system (6 dimensions)
+│   └── __init__.py
+│
+├── frontend/                         # Web interface
+│   └── index.html                    # Main UI with drag-drop upload
+│
+├── data/                             # Data directories
+│   ├── uploads/                      # Temporary PDF storage
+│   └── rubrics/                      # Custom evaluation rubrics
+│
+├── requirements.txt                  # Python dependencies
+├── .env.example                      # Example environment variables
+├── README_EN.md                      # Complete documentation
+├── QUICKSTART.md                     # Quick start guide
+├── START_HERE.md                     # Getting started guide
+└── LICENSE                           # MIT License
 ```
 
 ## 🔑 API端点

@@ -1,80 +1,75 @@
-# 🚀 论文评估系统 - 完整发布和部署指南
+# 🚀 Deployment Guide - Paper Analyzer
+
+Complete guide for deploying Paper Analyzer to production environments.
 
 ---
 
-## 📦 发布方案对比和选择
+## 📦 Deployment Options Comparison
 
-### 方案矩阵
-
-| 方案 | 发布形式 | 成本 | 用户数 | 部署难度 | 维护成本 | 适用场景 |
-|------|--------|------|-------|--------|--------|--------|
-| **本地应用** | 本地Python环境 | 无 | 1-5 | ⭐ | ⭐ | 个人/小团队 |
-| **Docker镜像** | 容器化应用 | 低 | 10-50 | ⭐⭐ | ⭐⭐ | 小型企业 |
-| **SaaS网站** | 云服务 | 中 | 100-1000+ | ⭐⭐⭐ | ⭐⭐ | 商业化产品 |
-| **Windows/Mac应用** | 独立可执行文件 | 中 | 1-10 | ⭐⭐⭐⭐ | ⭐⭐⭐ | 特定用户群 |
-| **Google Workspace插件** | Google Drive集成 | 低 | 100-1000 | ⭐⭐⭐ | ⭐⭐ | 学校/教育机构 |
+| Option | Format | Cost | Users | Difficulty | Maintenance | Use Case |
+|--------|--------|------|-------|-----------|------------|----------|
+| **Local Application** | Python environment | Free | 1-5 | ⭐ | ⭐ | Personal/Small team |
+| **Docker** | Container | Low | 10-50 | ⭐⭐ | ⭐⭐ | Small enterprise |
+| **Cloud SaaS** | Web service | Medium | 100-1000+ | ⭐⭐⭐ | ⭐⭐ | Commercial product |
+| **Executable** | Standalone app | Medium | 1-10 | ⭐⭐⭐⭐ | ⭐⭐⭐ | Specific users |
 
 ---
 
-## 🎯 推荐方案：SaaS网站 (最适合你)
+## 🎯 Recommended: Docker + Cloud Server
 
-### 为什么选择SaaS？
+### Quick Cloud Deployment (Starting from $5/month)
 
-```
-优势：
-  ✓ 用户无需任何配置，打开网址即用
-  ✓ 自动更新，所有用户都是最新版本
-  ✓ 可以按usage收费（如按论文数计费）
-  ✓ 数据集中管理，容易开发新功能
-  ✓ 可扩展性强（从10用户→10000用户）
-  ✓ 容易添加用户认证、支付、分析等功能
-
-劣势：
-  ✗ 需要服务器（月费 ¥50-500）
-  ✗ 需要维护和监控
-  ✗ 需要处理用户数据隐私
-```
-
----
-
-## 📋 方案1：本地应用发布（最快，现在就可以做）
-
-### 发布形式
-```
-GitHub仓库 + 安装说明 (用户自己配置环境)
-```
-
-### 用户使用流程
-```bash
-# 1. 克隆项目
-git clone https://github.com/yourusername/paper-analyzer.git
-cd paper-analyzer
-
-# 2. 配置API Key
-cp .env.example .env
-nano .env  # 编辑添加API Key
-
-# 3. 启动
-./start.sh
-
-# 4. 访问
-open frontend/index.html
-```
-
-### 发布步骤（15分钟）
+#### **Option A: Render.com (Recommended)**
 
 ```bash
-# 1. 创建GitHub仓库
-# 访问: https://github.com/new
-# 创建: paper-analyzer 仓库
+# 1. Sign up - https://render.com
+# 2. Connect GitHub repository
+# 3. Set environment variable: ANTHROPIC_API_KEY
+# 4. Deploy complete!
+# Your app will be at: https://paper-analyzer-xxx.onrender.com
+```
 
-# 2. 初始化Git
+#### **Option B: Docker + Cloud Servers**
+
+```bash
+# 1. Build Docker image
+cd /Users/siyuzhang/Desktop/KM/paper-analyzer
+docker build -t paper-analyzer:latest .
+
+# 2. Push to registry
+docker tag paper-analyzer:latest yourusername/paper-analyzer:latest
+docker push yourusername/paper-analyzer:latest
+
+# 3. Run on cloud server
+ssh your_server
+docker run -d -p 8000:80 \
+  -e ANTHROPIC_API_KEY=your_key \
+  yourusername/paper-analyzer:latest
+
+# 4. Configure domain and SSL
+# Use Nginx reverse proxy + Let's Encrypt
+
+# Complete! App running at: https://yourdomain.com
+```
+
+---
+
+## 💻 Local Deployment
+
+### GitHub Repository + Installation Instructions
+
+```bash
+# 1. Create GitHub repository
+# Visit: https://github.com/new
+# Create: paper-analyzer repository
+
+# 2. Initialize Git
 cd /Users/siyuzhang/Desktop/KM/paper-analyzer
 git init
 git add .
 git commit -m "Initial commit: Paper Analyzer MVP v0.1.0"
 
-# 3. 添加远程仓库
+# 3. Add remote repository
 git remote add origin https://github.com/yourusername/paper-analyzer.git
 git branch -M main
 git push -u origin main
