@@ -13,99 +13,99 @@ Project Root (/Users/siyuzhang/Desktop/KM/paper-analyzer)
 ├── DEPLOYMENT_GUIDE.md        ← 🚀 Deployment Options
 └── PROJECT_SUMMARY.md         ← 📊 Project Summary
 
-🛠️ 工具和脚本
-├── start.sh                   ← 🎬 一键启动
-├── test_system.py             ← 🧪 系统检查
-├── demo_client.py             ← 📡 命令行工具
-├── Dockerfile                 ← 🐳 Docker镜像
-└── docker-compose.yml         ← 🐳 Docker编排
+🛠️ Tools and Scripts
+├── start.sh                   ← 🎬 One-Click Startup
+├── test_system.py             ← 🧪 System Check
+├── demo_client.py             ← 📡 Command-line Tool
+├── Dockerfile                 ← 🐳 Docker Image
+└── docker-compose.yml         ← 🐳 Docker Compose
 
-⚙️ 配置文件
-├── .env.example               ← 环境变量模板
-├── .env                       ← 🔑 你的API Key配置
-└── requirements.txt           ← 📦 Python依赖
+⚙️ Configuration Files
+├── .env.example               ← Environment Variables Template
+├── .env                       ← 🔑 Your API Key Configuration
+└── requirements.txt           ← 📦 Python Dependencies
 
-📁 后端代码
+📁 Backend Code
 ├── backend/
-│   ├── main.py               ← FastAPI应用
-│   ├── analyzer.py           ← LLM分析引擎
-│   ├── pdf_parser.py         ← PDF解析
-│   ├── chunking.py           ← 文本分块
-│   ├── rubric.py             ← 评分系统
-│   └── config.py             ← 配置管理
+│   ├── main.py               ← FastAPI Application
+│   ├── analyzer.py           ← LLM Analysis Engine
+│   ├── pdf_parser.py         ← PDF Parsing
+│   ├── chunking.py           ← Text Chunking
+│   ├── rubric.py             ← Scoring System
+│   └── config.py             ← Configuration Management
 
-💻 前端代码
+💻 Frontend Code
 └── frontend/
-    └── index.html            ← Web界面
+    └── index.html            ← Web Interface
 ```
 
 ---
 
-## ⏭️ 接下来5个必做步骤
+## ⏭️ Next 5 Essential Steps
 
-### 第1步：阅读正确的文档（5分钟）
+### Step 1: Read the Correct Documentation (5 minutes)
 
-**☐ 新手**: 阅读 `VS_CODE_GUIDE.md`
+**☐ Beginner**: Read `VS_CODE_GUIDE.md`
 ```
-这份文档是为VS Code用户写的最详细指南
-包含截图、快捷键、常见问题
-```
-
-**☐ 有经验**: 阅读 `START_HERE.md`
-```
-3分钟快速启动指南
-关键步骤一目了然
+This document is the most detailed guide for VS Code users
+Includes screenshots, keyboard shortcuts, and FAQ
 ```
 
-**☐ 想要发布**: 阅读 `DEPLOYMENT_GUIDE.md`
+**☐ Experienced**: Read `START_HERE.md`
 ```
-4种发布方案对比
-成本和维护分析
+3-minute quick start guide
+Key steps at a glance
 ```
 
-### 第2步：获取API Key（5分钟）
+**☐ Want to Deploy**: Read `DEPLOYMENT_GUIDE.md`
+```
+4 deployment options comparison
+Cost and maintenance analysis
+```
+
+### Step 2: Get API Key (5 minutes)
 
 ```
-访问: https://console.anthropic.com/
-1. 注册 / 登录
-2. API Keys 菜单
+Visit: https://console.anthropic.com/
+1. Register / Login
+2. API Keys Menu
 3. Create Key
-4. 复制密钥 (sk-ant-xxxxx)
+4. Copy key (sk-ant-xxxxx)
 ```
 
-### 第3步：配置API Key（2分钟）
+### Step 3: Configure API Key (2 minutes)
 
 ```bash
-# 方式1：在VS Code中编辑 .env 文件
+# Method 1: Edit .env file in VS Code
 ANTHROPIC_API_KEY=sk-ant-xxxxxxxxxxxxxxxxxxxx
 
-# 方式2：从命令行设置
+# Method 2: Set from command line
 export ANTHROPIC_API_KEY=sk-ant-xxxxxxxxxxxxxxxxxxxx
 ```
 
-### 第4步：启动系统（1分钟）
+### Step 4: Start System (1 minute)
 
 ```bash
 cd /Users/siyuzhang/Desktop/KM/paper-analyzer
 source venv/bin/activate
 ./start.sh
 
-# 看到这个就表示成功
+# Success when you see this
 ✓ Uvicorn running on http://127.0.0.1:8000
 ```
 
-### 第5步：上传论文测试（<2分钟）
+### Step 5: Test Upload Paper (<2 minutes)
 
 ```
-打开: file:///Users/siyuzhang/Desktop/KM/paper-analyzer/frontend/index.html
-或: http://localhost:8000/docs
+Open: file:///Users/siyuzhang/Desktop/KM/paper-analyzer/frontend/index.html
+Or: http://localhost:8000/docs
 
-拖拽或上传任何PDF论文
-等待1-2分钟
-查看AI生成的评分和建议
+Drag or upload any PDF paper
+Wait 1-2 minutes
+View AI-generated scores and suggestions
 ```
 
-**总耗时: ~15分钟** ⏱️
+**Total Time: ~15 minutes** ⏱️
 
 ---
 

@@ -7,191 +7,191 @@
 
 ---
 
-## 📦 已完成的工作
+## 📦 Completed Work
 
-### ✅ 核心系统框架
-- [x] 项目目录结构设计
-- [x] FastAPI + Uvicorn Web框架
-- [x] Python虚拟环境配置
-- [x] 依赖包管理 (requirements.txt)
+### ✅ Core System Framework
+- [x] Project directory structure design
+- [x] FastAPI + Uvicorn Web framework
+- [x] Python virtual environment configuration
+- [x] Dependency package management (requirements.txt)
 
-### ✅ 后端模块 (backend/)
+### ✅ Backend Modules (backend/)
 ```
-✓ main.py          - FastAPI应用入口 & REST API路由
-✓ config.py        - 环境配置管理
-✓ pdf_parser.py    - PDF解析、文本提取、结构识别
-✓ chunking.py      - 智能文本分块 (Langchain)
-✓ analyzer.py      - Claude LLM集成、深度分析引擎
-✓ rubric.py        - 专业评分系统 (6个维度)
-```
-
-### ✅ 前端界面
-```
-✓ frontend/index.html - 现代化拖拽上传页面
-  • 支持PDF拖拽上传
-  • 实时分析进度显示
-  • 美观的结果展示卡片
-  • 全CSS响应式设计
+✓ main.py          - FastAPI application entry & REST API routes
+✓ config.py        - Environment configuration management
+✓ pdf_parser.py    - PDF parsing, text extraction, structure recognition
+✓ chunking.py      - Intelligent text chunking (Langchain)
+✓ analyzer.py      - Claude LLM integration, deep analysis engine
+✓ rubric.py        - Professional scoring system (6 dimensions)
 ```
 
-### ✅ 工具脚本
+### ✅ Frontend Interface
 ```
-✓ test_system.py      - 系统完整性检查工具
-✓ demo_client.py      - Python命令行客户端
-✓ start.sh            - 快速启动脚本
-✓ init.sh             - 初始化脚本
-```
-
-### ✅ 文档与配置
-```
-✓ README.md           - 完整项目文档
-✓ QUICKSTART.md       - 快速开始指南
-✓ .env.example        - 环境变量模板
-✓ requirements.txt    - 所有依赖包列表
+✓ frontend/index.html - Modern drag-and-drop upload page
+  • PDF drag-and-drop upload support
+  • Real-time analysis progress display
+  • Beautiful result display cards
+  • Fully CSS responsive design
 ```
 
-### ✅ 已安装的关键库
+### ✅ Tool Scripts
 ```
-FastAPI 0.136.1       - Web框架
-Anthropic 0.102.0     - Claude API官方SDK
-pdfplumber 0.11.9     - PDF高级解析
-langchain 1.3.1       - AI工程框架
-python-docx 1.2.0     - Word文档生成
+✓ test_system.py      - System integrity check tool
+✓ demo_client.py      - Python command-line client
+✓ start.sh            - Quick startup script
+✓ init.sh             - Initialization script
+```
+
+### ✅ Documentation & Configuration
+```
+✓ README.md           - Complete project documentation
+✓ QUICKSTART.md       - Quick start guide
+✓ .env.example        - Environment variables template
+✓ requirements.txt    - All dependency packages
+```
+
+### ✅ Installed Key Libraries
+```
+FastAPI 0.136.1       - Web framework
+Anthropic 0.102.0     - Claude API official SDK
+pdfplumber 0.11.9     - Advanced PDF parsing
+langchain 1.3.1       - AI engineering framework
+python-docx 1.2.0     - Word document generation
 ```
 
 ---
 
-## 🎯 核心功能快览
+## 🎯 Core Features Overview
 
-### 1. **PDF智能解析**
+### 1. **Intelligent PDF Analysis**
 ```python
-✓ 自动提取论文全文
-✓ 识别标题、章节结构
-✓ 检测图表数量和标题
-✓ 提取元信息和统计
+✓ Automatically extract full paper text
+✓ Identify titles and chapter structure
+✓ Detect number and titles of figures/tables
+✓ Extract metadata and statistics
 ```
 
-### 2. **文本智能分块**
+### 2. **Intelligent Text Chunking**
 ```python
-✓ 递归分割 (2000字/块)
-✓ 上下文重叠保留 (200字)
-✓ Token数量估算
-✓ 支持多语言
+✓ Recursive splitting (2000 chars/chunk)
+✓ Context overlap retention (200 chars)
+✓ Token count estimation
+✓ Multi-language support
 ```
 
-### 3. **LLM深度分析**
+### 3. **LLM Deep Analysis**
 ```python
-✓ Claude 3.5 Sonnet 集成
-✓ 内容质量评估
-✓ 学术严谨性检查
-✓ 教学实践指导价值分析
-✓ 创意性和研究深度评估
+✓ Claude 3.5 Sonnet integration
+✓ Content quality assessment
+✓ Academic rigor check
+✓ Teaching and practice guidance value analysis
+✓ Creativity and research depth evaluation
 ```
 
-### 4. **专业评分系统**
+### 4. **Professional Scoring System**
 ```python
-✓ 6个评分维度 (总权重100%)
-  • 格式规范 (10%)      - 排版、页码、参考文献
-  • 结构完整性 (15%)    - 引言、文献、方法、结论
-  • 理论基础 (25%)      - 框架、概念、理论创新
-  • 方法论 (25%)        - 方法、样本、数据、分析
-  • 创新应用 (15%)      - 新颖性、指导意义
-  • 学术写作 (10%)      - 表述、逻辑、术语
+✓ 6 scoring dimensions (total weight 100%)
+  • Format Specification (10%)      - Formatting, pagination, references
+  • Structural Completeness (15%)   - Introduction, literature, methods, conclusion
+  • Theoretical Foundation (25%)    - Framework, concepts, theoretical innovation
+  • Methodology (25%)               - Methods, samples, data, analysis
+  • Creative Application (15%)      - Novelty, guiding significance
+  • Academic Writing (10%)          - Expression, logic, terminology
 
-✓ 智能评分汇总
-✓ 等级判定 (A/B/C/D/F)
-✓ 详细反馈
+✓ Intelligent score summarization
+✓ Grade determination (A/B/C/D/F)
+✓ Detailed feedback
 ```
 
 ### 5. **REST API**
 ```
-GET  /                - 获取API信息
-GET  /health          - 健康检查
-GET  /rubrics         - 获取评分标准
-POST /upload          - 上传论文并分析
-POST /generate-report - 报告生成 (开发中)
+GET  /                - Get API information
+GET  /health          - Health check
+GET  /rubrics         - Get scoring standards
+POST /upload          - Upload paper and analyze
+POST /generate-report - Report generation (in development)
 ```
 
 ---
 
-## 🚀 立即使用
+## 🚀 Quick Usage
 
-### 方案A：一键启动 (最快)
+### Option A: One-Click Startup (Fastest)
 
 ```bash
-# 方案1：运行启动脚本
+# Method 1: Run startup script
 cd /Users/siyuzhang/Desktop/KM/paper-analyzer
 chmod +x start.sh
 ./start.sh
 
-# 方案2：手动启动
+# Method 2: Manual startup
 source venv/bin/activate
 cd backend
 python -m uvicorn main:app --reload
 ```
 
-### 方案B：Web界面
+### Option B: Web Interface
 ```bash
-# 在浏览器打开
+# Open in browser
 open file:///Users/siyuzhang/Desktop/KM/paper-analyzer/frontend/index.html
 
-# 或使用http服务
+# Or use http server
 python3 -m http.server 8080 --directory /Users/siyuzhang/Desktop/KM/paper-analyzer/frontend
-# 访问: http://localhost:8080
+# Visit: http://localhost:8080
 ```
 
-### 方案C：命令行客户端
+### Option C: Command-line Client
 ```bash
-# 检查API
+# Check API health
 python3 demo_client.py --health
 
-# 获取评分标准
+# Get scoring standards
 python3 demo_client.py --rubrics
 
-# 分析论文
+# Analyze paper
 python3 demo_client.py --analyze /path/to/paper.pdf
 ```
 
 ---
 
-## 📊 项目统计
+## 📊 Project Statistics
 
-| 指标 | 数值 |
-|------|------|
-| Python代码行数 | ~1500+ |
-| 前端代码行数 | ~450 |
-| 全部代码行数 | ~2000+ |
-| 核心模块数 | 6个 |
-| REST API端点 | 5个 |
-| 支持的输出格式 | JSON / HTML / Word(计划) |
-| 评分维度 | 6个 |
-| 虚拟环境大小 | ~500MB |
+| Metric | Value |
+|--------|-------|
+| Python Code Lines | ~1500+ |
+| Frontend Code Lines | ~450 |
+| Total Code Lines | ~2000+ |
+| Core Modules | 6 |
+| REST API Endpoints | 5 |
+| Supported Output Formats | JSON / HTML / Word(planned) |
+| Scoring Dimensions | 6 |
+| Virtual Environment Size | ~500MB |
 
 ---
 
-## 💰 成本分析
+## 💰 Cost Analysis
 
-### API调用成本 (Claude Haiku 3.5)
+### API Call Cost (Claude Haiku 3.5)
 ```
-单篇论文 (5000字)  → ~0.1-0.3元/篇
-批量10篇          → ~1-3元
-月度100篇         → ~10-30元
+Single paper (5000 words)  → ~$0.001-0.003 per paper
+Batch of 10              → ~$0.01-0.03
+Monthly 100 papers       → ~$0.10-0.30
 ```
 
-### 系统要求
+### System Requirements
 ```
 ✓ macOS / Linux / Windows
 ✓ Python 3.11+
-✓ 4GB RAM最低
-✓ 50MB磁盘空间
-✓ 网络连接 (调用Claude API)
+✓ 4GB RAM minimum
+✓ 50MB disk space
+✓ Internet connection (for Claude API calls)
 ```
 
 ---
 
-## 📋 API调用示例
+## 📋 API Call Examples
 
-### Python脚本
+### Python Script
 ```python
 import requests
 
@@ -204,18 +204,18 @@ with open(pdf_path, "rb") as f:
     )
 
 result = response.json()
-print(f"总分: {result['analysis']['overall_score']['final_score']}")
-print(f"等级: {result['analysis']['overall_score']['grade']}")
+print(f"Overall Score: {result['analysis']['overall_score']['final_score']}")
+print(f"Grade: {result['analysis']['overall_score']['grade']}")
 ```
 
-### cURL命令
+### cURL Command
 ```bash
 curl -X POST "http://localhost:8000/upload" \
   -F "file=@paper.pdf" \
   -H "Accept: application/json"
 ```
 
-### JavaScript/前端
+### JavaScript/Frontend
 ```javascript
 const formData = new FormData();
 formData.append("file", pdfFile);
@@ -230,60 +230,60 @@ fetch("http://localhost:8000/upload", {
 
 ---
 
-## 🔧 常见操作
+## 🔧 Common Operations
 
-### 修改评分权重
-编辑 `backend/rubric.py` 中的 `get_default_rubric()` 方法：
+### Modify Scoring Weights
+Edit `backend/rubric.py` in the `get_default_rubric()` method:
 ```python
 "theory": {
-    "weight": 0.25,  # 修改这里
+    "weight": 0.25,  # Modify here
     ...
 }
 ```
 
-### 创建自定义评分标准
+### Create Custom Scoring Standard
 ```python
 from backend.rubric import create_rubric_config
 
 my_rubric = {
     "custom_dimension": {
-        "name": "自定义维度",
+        "name": "Custom Dimension",
         "weight": 0.30,
         "max_score": 30,
-        "criteria": ["标准1", "标准2"]
+        "criteria": ["Criterion 1", "Criterion 2"]
     }
 }
 
 create_rubric_config("my_rubric", my_rubric)
 ```
 
-### 调整文本分块大小
-编辑 `backend/config.py`：
+### Adjust Text Chunk Size
+Edit `backend/config.py`:
 ```python
-CHUNK_SIZE = 3000      # 改为3000字/块
-CHUNK_OVERLAP = 300    # 改为300字重叠
+CHUNK_SIZE = 3000      # Change to 3000 chars/chunk
+CHUNK_OVERLAP = 300    # Change to 300 chars overlap
 ```
 
-### 更换LLM模型
-编辑 `backend/analyzer.py` 中的 `_call_claude` 方法：
+### Switch LLM Model
+Edit `backend/analyzer.py` in the `_call_claude` method:
 ```python
-model="claude-3-haiku-20240307"  # 改为其他模型
+model="claude-3-haiku-20240307"  # Change to other models
 ```
 
 ---
 
-## 🎓 学习资源
+## 🎓 Learning Resources
 
-### 项目内文档
-- 📖 `README.md` - 完整功能文档
-- 🚀 `QUICKSTART.md` - 快速开始指南
-- 💻 `backend/main.py` - API路由代码注释
-- 🔍 `backend/analyzer.py` - LLM集成示例
+### Project Documentation
+- 📖 `README.md` - Complete feature documentation
+- 🚀 `QUICKSTART.md` - Quick start guide
+- 💻 `backend/main.py` - API route code comments
+- 🔍 `backend/analyzer.py` - LLM integration examples
 
-### 外部资源
-- [Claude API官方文档](https://docs.anthropic.com/)
-- [FastAPI教程](https://fastapi.tiangolo.com/)
-- [Langchain文档](https://python.langchain.com/)
+### External Resources
+- [Claude API Official Documentation](https://docs.anthropic.com/)
+- [FastAPI Tutorial](https://fastapi.tiangolo.com/)
+- [Langchain Documentation](https://python.langchain.com/)
 
 ---
 

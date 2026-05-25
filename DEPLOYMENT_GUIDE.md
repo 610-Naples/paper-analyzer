@@ -74,141 +74,141 @@ git remote add origin https://github.com/yourusername/paper-analyzer.git
 git branch -M main
 git push -u origin main
 
-# 4. 创建README.md（已有）
-# 5. 添加LICENSE
-# 6. 添加INSTALLATION.md
+# 4. Create README.md (already exists)
+# 5. Add LICENSE
+# 6. Add INSTALLATION.md
 
-# Done! 用户现在可以克隆你的项目
+# Done! Users can now clone your project
 ```
 
 ---
 
-## 📱 方案2：Docker + 云服务器（推荐）
+## 📱 Option 2: Docker + Cloud Server (Recommended)
 
-### 最快的云部署（5¥/月起）
+### Fastest Cloud Deployment (Starting from $5/month)
 
-#### **选项A：Render.com（推荐，免费tier可用）**
+#### **Option A: Render.com (Recommended, free tier available)**
 
 ```bash
-# 1. 注册账户 - https://render.com
+# 1. Sign up - https://render.com
 
-# 2. 连接GitHub仓库
-# Render会自动部署
+# 2. Connect GitHub repository
+# Render will deploy automatically
 
-# 3. 设置环境变量
+# 3. Set environment variable
 # ANTHROPIC_API_KEY=your_key
 
-# 4. 部署完成！
-# 你的应用在: https://paper-analyzer-xxx.onrender.com
+# 4. Deployment complete!
+# Your app is at: https://paper-analyzer-xxx.onrender.com
 ```
 
-#### **选项B：Docker + 阿里云/腾讯云**
+#### **Option B: Docker + Cloud Server (Alibaba Cloud / Tencent Cloud)**
 
 ```bash
-# 1. 构建Docker镜像
+# 1. Build Docker image
 cd /Users/siyuzhang/Desktop/KM/paper-analyzer
 docker build -t paper-analyzer:latest .
 
-# 2. 上传到镜像仓库
+# 2. Push to image registry
 docker tag paper-analyzer:latest yourusername/paper-analyzer:latest
 docker push yourusername/paper-analyzer:latest
 
-# 3. 在云服务器上运行
+# 3. Run on cloud server
 ssh your_server
 docker run -d -p 8000:80 \
   -e ANTHROPIC_API_KEY=your_key \
   yourusername/paper-analyzer:latest
 
-# 4. 配置域名和SSL
-# 使用Nginx反向代理 + Let's Encrypt
+# 4. Configure domain and SSL
+# Use Nginx reverse proxy + Let's Encrypt
 
-# 完成！应用在: https://yourdomain.com
+# Complete! App is at: https://yourdomain.com
 ```
 
 ---
 
-## 🌐 方案3：完整SaaS网站（商业级）
+## 🌐 Option 3: Complete SaaS Website (Enterprise Grade)
 
-### 所需工作
+### Required Work
 
-#### **15% - 现有代码（已完成）**
+#### **15% - Existing Code (Already Completed)**
 ```
-✓ 后端API
-✓ 前端界面  
-✓ 评分系统
-```
-
-#### **30% - 用户系统（1-2周）**
-```
-□ 用户注册/登录
-□ 用户认证（JWT/Session）
-□ 用户权限管理
-□ 个人资料管理
+✓ Backend API
+✓ Frontend Interface
+✓ Scoring System
 ```
 
-#### **25% - 功能扩展（1-2周）**
+#### **30% - User System (1-2 weeks)**
 ```
-□ 论文历史记录
-□ 结果导出（Word/PDF）
-□ 批量上传处理
-□ 评分报告下载
-```
-
-#### **20% - 支付和监控（1周）**
-```
-□ 支付集成（Stripe/支付宝）
-□ 使用量计费
-□ 数据库（PostgreSQL）
-□ 日志和监控（Sentry）
+□ User Registration/Login
+□ User Authentication (JWT/Session)
+□ User Permission Management
+□ User Profile Management
 ```
 
-#### **10% - 部署和运维（持续）**
+#### **25% - Feature Extension (1-2 weeks)**
 ```
-□ CI/CD流程
-□ 服务器部署
-□ 备份策略
-□ 性能优化
-```
-
----
-
-## 💰 成本分析
-
-### 本地应用
-```
-初期投入: ¥0
-月度成本: ¥0 (用户负担API费用)
-扩展成本: 无
-总成本: 低 ⭐
+□ Paper History Records
+□ Result Export (Word/PDF)
+□ Batch Upload Processing
+□ Score Report Download
 ```
 
-### Docker + 云服务器（推荐方案）
+#### **20% - Payment and Monitoring (1 week)**
 ```
-初期投入: ¥200-500 (域名、SSL等)
-月度成本: ¥50-200 (服务器)
-API成本: 按使用计（用户付款）
-运维成本: ¥500-2000 (兼职)
-总成本: 中等 ⭐⭐
+□ Payment Integration (Stripe/PayPal)
+□ Usage-Based Billing
+□ Database (PostgreSQL)
+□ Logging and Monitoring (Sentry)
 ```
 
-### 完整SaaS（商业化）
+#### **10% - Deployment and Operations (Ongoing)**
 ```
-初期投入: ¥5000-10000 (开发)
-月度成本: ¥500-2000 (基础设施)
-API成本: 按使用计
-运维成本: ¥2000-5000 (全职)
-收入: ¥10000+ (月，按使用计费)
-总成本: 高，但ROI好 ⭐⭐⭐
+□ CI/CD Pipeline
+□ Server Deployment
+□ Backup Strategy
+□ Performance Optimization
 ```
 
 ---
 
-## 🔧 立即可以做的：本地应用发布
+## 💰 Cost Analysis
 
-### Step 1: 准备项目
+### Local Application
+```
+Initial Investment: $0
+Monthly Cost: $0 (users bear API costs)
+Scaling Cost: None
+Total Cost: Low ⭐
+```
+
+### Docker + Cloud Server (Recommended Option)
+```
+Initial Investment: $200-500 (domain, SSL, etc.)
+Monthly Cost: $50-200 (server)
+API Cost: Usage-based (users pay)
+Operations Cost: $500-2000 (part-time)
+Total Cost: Medium ⭐⭐
+```
+
+### Complete SaaS (Commercialized)
+```
+Initial Investment: $5000-10000 (development)
+Monthly Cost: $500-2000 (infrastructure)
+API Cost: Usage-based
+Operations Cost: $2000-5000 (full-time)
+Revenue: $10000+ (monthly, usage-based)
+Total Cost: High, but good ROI ⭐⭐⭐
+```
+
+---
+
+## 🔧 Immediate Actions: Local Application Release
+
+### Step 1: Prepare Project
 
 ```bash
-# 1. 创建.gitignore文件
+# 1. Create .gitignore file
 cd /Users/siyuzhang/Desktop/KM/paper-analyzer
 cat > .gitignore << 'EOF'
 venv/
@@ -221,23 +221,23 @@ data/uploads/*
 .pytest_cache/
 EOF
 
-# 2. 创建LICENSE文件
-# 访问: https://choosealicense.com/
-# 选择MIT License或Apache 2.0
+# 2. Create LICENSE file
+# Visit: https://choosealicense.com/
+# Choose MIT License or Apache 2.0
 ```
 
-### Step 2: GitHub发布
+### Step 2: GitHub Release
 
 ```bash
-# 1. 创建GitHub账户（如果没有）
+# 1. Create GitHub account (if you don't have one)
 # https://github.com/signup
 
-# 2. 创建新仓库
-# 仓库名: paper-analyzer
-# 描述: AI-Powered Academic Paper Evaluation System
-# Public (开源)
+# 2. Create new repository
+# Repository name: paper-analyzer
+# Description: AI-Powered Academic Paper Evaluation System
+# Public (Open Source)
 
-# 3. 初始化仓库
+# 3. Initialize repository
 git init
 git add .
 git commit -m "Initial commit: Paper Analyzer v0.1.0 MVP"
@@ -245,201 +245,201 @@ git remote add origin https://github.com/YOUR_USERNAME/paper-analyzer.git
 git branch -M main
 git push -u origin main
 
-# Done! 开源发布完成
+# Done! Open source release complete
 ```
 
-### Step 3: 创建发布说明
+### Step 3: Create Release Instructions
 
-创建 `INSTALLATION.md` 文件：
+Create `INSTALLATION.md` file:
 
 ```markdown
-# 安装和使用指南
+# Installation and Usage Guide
 
-## ⚙️ 前置需求
+## ⚙️ Prerequisites
 - Python 3.11+
 - macOS / Linux / Windows
-- 4GB 内存
+- 4GB Memory
 - Claude API Key
 
-## 🚀 安装
+## 🚀 Installation
 
-1. 克隆项目
-```bash
+1. Clone Project
+\`\`\`bash
 git clone https://github.com/YOUR_USERNAME/paper-analyzer.git
 cd paper-analyzer
-```
+\`\`\`
 
-2. 配置环境
-```bash
+2. Configure Environment
+\`\`\`bash
 cp .env.example .env
-# 编辑 .env，添加你的 API Key
-```
+# Edit .env to add your API Key
+\`\`\`
 
-3. 启动应用
-```bash
+3. Start Application
+\`\`\`bash
 chmod +x start.sh
 ./start.sh
+\`\`\`
+
+4. Open Browser
+- Web Interface: file://./frontend/index.html
+- API Documentation: http://localhost:8000/docs
+
+## 📊 Usage
+
+- Drag and drop or click to upload PDF papers
+- Wait 1-2 minutes for analysis
+- View detailed scores and suggestions
+
+## 🆘 Troubleshooting
+
+See README.md for troubleshooting section
+\`\`\`
+
+---
+
+## 🌟 Next Improvement Plan
+
+### Phase 1 (Now) ✅
+```
+✓ Release local application to GitHub
+✓ Complete README and documentation
+✓ Collect user feedback
 ```
 
-4. 打开浏览器
-- Web界面: file://./frontend/index.html
-- API文档: http://localhost:8000/docs
+### Phase 2 (1-2 weeks)
+```
+□ Dockerize deployment
+□ Deploy to Render or cloud server
+□ Configure domain (e.g., paperanalyzer.app)
+□ Launch product website
+```
 
-## 📊 使用
-
-- 拖拽或点击上传PDF论文
-- 等待1-2分钟进行分析
-- 查看详细评分和建议
-
-## 🆘 问题排查
-
-参考 README.md 中的故障排除部分
+### Phase 3 (1 month)
+```
+□ Add user authentication system
+□ Integrate payment system
+□ Commercial promotion
+□ Paid API plans
 ```
 
 ---
 
-## 🌟 下一步改进计划
+## 📞 Post-Launch Maintenance Plan
 
-### Phase 1（现在）✅
-```
-✓ 本地应用发布到GitHub
-✓ 完善README和文档
-✓ 收集用户反馈
-```
+### Maintenance Checklist
 
-### Phase 2（1-2周）
-```
-□ Docker化部署
-□ 部署到Render或云服务器
-□ 配置域名（如: paperanalyzer.app）
-□ 发布产品网站
-```
+| Task | Frequency | Effort | Cost |
+|------|-----------|--------|------|
+| Dependency Updates | Monthly | 1 hour | None |
+| Bug Fixes | Weekly | 2 hours | None |
+| User Support | Daily | 1 hour | None |
+| Performance Optimization | Monthly | 2 hours | None |
+| Security Patches | Emergency | 1 hour | None |
+| Server Maintenance | Weekly | 1 hour | None |
+| Monitoring and Alerts | Daily | 0.5 hours | Automatable |
 
-### Phase 3（1个月）
-```
-□ 添加用户认证系统
-□ 集成支付系统
-□ 商业化推广
-□ 付费API计划
-```
+**Total Monthly Time**: ~40 hours (equivalent to 10% of one full-time employee)
 
----
-
-## 📞 后期维护方案
-
-### 维护工作清单
-
-| 任务 | 频率 | 工作量 | 成本 |
-|------|------|-------|------|
-| 依赖库更新 | 月 | 1小时 | 无 |
-| Bug修复 | 周 | 2小时 | 无 |
-| 用户支持 | 日 | 1小时 | 无 |
-| 性能优化 | 月 | 2小时 | 无 |
-| 安全补丁 | 紧急 | 1小时 | 无 |
-| 服务器维护 | 周 | 1小时 | 无 |
-| 监控和告警 | 日 | 0.5小时 | 可自动化 |
-
-**总月度时间**: ~40小时（相当于1个全职员工的10%工作量）
-
-### 维护策略
+### Maintenance Strategy
 
 ```
-1️⃣ 自动化测试
-   - 每次代码提交自动运行测试
-   - 使用GitHub Actions
+1️⃣ Automated Testing
+   - Run tests automatically on each code commit
+   - Use GitHub Actions
 
-2️⃣ 监控告警
-   - 使用Sentry监控错误
-   - 使用Uptime Robot监控服务可用性
-   - 月费: ¥50-100
+2️⃣ Monitoring and Alerts
+   - Use Sentry for error monitoring
+   - Use Uptime Robot for service availability monitoring
+   - Monthly cost: $50-100
 
-3️⃣ 自动化更新
-   - Dependabot自动检查依赖更新
-   - 自动创建PR进行更新
+3️⃣ Automated Updates
+   - Dependabot automatically checks for dependency updates
+   - Automatically creates PRs for updates
 
-4️⃣ 用户支持
-   - GitHub Issues进行问题反馈
-   - Discord社区支持（可选）
-   - 每周检查一次反馈
+4️⃣ User Support
+   - Use GitHub Issues for problem feedback
+   - Discord community support (optional)
+   - Check feedback weekly
 
-5️⃣ 文档维护
-   - 随功能更新文档
-   - 保持安装说明最新
+5️⃣ Documentation Maintenance
+   - Update documentation with feature changes
+   - Keep installation instructions current
 ```
 
 ---
 
-## ✅ 我的建议
+## ✅ My Recommendations
 
-### 🎯 当前最优方案
+### 🎯 Current Optimal Strategy
 
-**短期（现在-1周）：本地应用发布**
+**Short Term (Now - 1 week): Release Local Application**
 ```
-1. 创建GitHub仓库
-2. 上传项目代码
-3. 完善文档
-4. 分享给朋友/同事测试
-```
-
-**中期（1-4周）：Docker + 云服务器**
-```
-1. 部署到Render或云服务器（+¥50/月）
-2. 配置域名
-3. 开始推广
+1. Create GitHub repository
+2. Upload project code
+3. Complete documentation
+4. Share with friends/colleagues for testing
 ```
 
-**长期（1-3月）：商业化**
+**Medium Term (1-4 weeks): Docker + Cloud Server**
 ```
-1. 添加用户系统
-2. 集成支付
-3. 付费用户订阅
-4. 成为独立产品
+1. Deploy to Render or cloud server (+$50/month)
+2. Configure domain
+3. Start promotion
+```
+
+**Long Term (1-3 months): Commercialization**
+```
+1. Add user authentication system
+2. Integrate payment
+3. Paid user subscriptions
+4. Become an independent product
 ```
 
 ---
 
-## 📊 收入模型预测
+## 📊 Revenue Model Prediction
 
-### 订阅制（推荐）
+### Subscription Model (Recommended)
 ```
-免费版: 
-  - 每月10篇论文
-  - 基础评分
+Free Tier: 
+  - 10 papers per month
+  - Basic scoring
   
-付费版 (¥99/月):
-  - 无限论文分析
-  - 高级评分详解
-  - 批量处理
-  - 导出报告
+Premium Tier ($99/month):
+  - Unlimited paper analysis
+  - Advanced scoring details
+  - Batch processing
+  - Report export
 
-预测：
-  - 100个免费用户
-  - 10个付费用户 × ¥99 = ¥990/月
-  - 100个付费用户 × ¥99 = ¥9900/月 ⭐
+Prediction:
+  - 100 free users
+  - 10 paid users × $99 = $990/month
+  - 100 paid users × $99 = $9900/month ⭐
 ```
 
-### 按使用计费（灵活）
+### Usage-Based Pricing (Flexible)
 ```
-¥0.5 = 1篇论文分析
-¥5 = 包含10篇论文
-¥49 = 每月无限使用
+$0.5 = 1 paper analysis
+$5 = 10 papers
+$49 = Monthly unlimited
 
-预测：
-  - 平均每天100篇
-  - 月费 = 100 × 30 × ¥0.5 = ¥1500
+Prediction:
+  - Average 100 papers per day
+  - Monthly revenue = 100 × 30 × $0.5 = $1500
 ```
 
 ---
 
-## 🎉 立即开始
+## 🎉 Get Started Now
 
-### 现在就可以做的：
+### What You Can Do Right Now:
 
 ```bash
-# 1. 创建GitHub账户
+# 1. Create GitHub account
 # https://github.com/signup
 
-# 2. 初始化仓库
+# 2. Initialize repository
 cd /Users/siyuzhang/Desktop/KM/paper-analyzer
 git init
 git add .
@@ -447,12 +447,12 @@ git commit -m "Initial: Paper Analyzer v0.1.0"
 git remote add origin https://github.com/YOUR_USERNAME/paper-analyzer.git
 git push -u origin main
 
-# 3. 分享GitHub链接给朋友
+# 3. Share GitHub link with friends
 # "Check out my AI paper evaluation system!"
 
-# 完成！你已经发布了第一个版本 🎊
+# Done! You've released your first version 🎊
 ```
 
 ---
 
-**选择你的路径，开始行动！** 🚀
+**Choose your path and take action!** 🚀
