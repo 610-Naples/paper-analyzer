@@ -1,12 +1,12 @@
-# 🎯 Getting Started - Paper Analyzer
+#  Getting Started - Paper Analyzer
 
-Congratulations! Your complete Paper Analyzer system is ready! 👏
+Congratulations! Your complete Paper Analyzer system is ready! 
 
 Now it takes just 3 simple steps to launch the system.
 
 ---
 
-## 🔑 Step 1: Get Claude API Key
+##  Step 1: Get Claude API Key
 
 1. Visit: **https://console.anthropic.com/**
 2. Sign up or log in
@@ -14,11 +14,11 @@ Now it takes just 3 simple steps to launch the system.
 4. Click **Create Key** to generate a new key
 5. **Copy the key** (format: `sk-ant-xxx...`)
 
-> 💡 **Tip**: New registered accounts typically receive free credits ($5), enough to test 200+ paper analyses
+>  **Tip**: New registered accounts typically receive free credits ($5), enough to test 200+ paper analyses
 
 ---
 
-## 🔧 Step 2: Configure API Key
+##  Step 2: Configure API Key
 
 ```bash
 # Method 1: Edit .env file (Recommended)
@@ -42,11 +42,11 @@ MAX_FILE_SIZE=50000000
 EOF
 ```
 
-> ⚠️ **Important**: Ensure `.env` file is in project root and do NOT commit it to git
+>  **Important**: Ensure `.env` file is in project root and do NOT commit it to git
 
 ---
 
-## 🚀 Step 3: Start the System
+##  Step 3: Start the System
 
 ### Easiest Method (Recommended)
 
@@ -70,7 +70,7 @@ cd backend
 python -m uvicorn main:app --reload
 ```
 
-**If you see this, you're successful:** ✅
+**If you see this, you're successful:** 
 ```
 INFO:     Uvicorn running on http://127.0.0.1:8000
 INFO:     Reload enabled
@@ -78,64 +78,64 @@ INFO:     Reload enabled
 
 ---
 
-## 📱 Ready to Use!
+##  Ready to Use!
 
-### 方式1️⃣：Web界面 (最简单)
+### Method One：Web UI 
 
-在浏览器中打开：
+open in the browser：
 ```
 file:///Users/siyuzhang/Desktop/KM/paper-analyzer/frontend/index.html
 ```
 
-或者：
+or：
 ```bash
-# 如果需要http服务
+# if need http server
 python3 -m http.server 8080 --directory /Users/siyuzhang/Desktop/KM/paper-analyzer/frontend
 # 访问: http://localhost:8080
 ```
 
-然后：
-1. ✅ 拖拽或点击上传PDF论文
-2. ⏳ 等待1-2分钟分析
-3. 📊 查看详细评分和建议
+Then：
+1. drag or click to upload the PDF article
+2. wait for 1-2 minutes to analysis
+3. View detailed ratings and suggestions
 
 ---
 
-### 方式2️⃣：API文档 (开发者)
+### Method Two：API Documentation (Developer) 
 
-启动服务后访问：
+After starting the service, access:
 ```
 http://localhost:8000/docs
 ```
 
-这会打开交互式API文档（Swagger UI），可以直接测试所有API端点。
+This will open the interactive API documentation (Swagger UI), allowing you to directly test all API endpoints.
 
 ---
 
-### 方式3️⃣：命令行客户端 (高级)
+### Method Three：Command-line client (advanced)
 
 ```bash
-# 检查API状态
+# check API status
 python3 demo_client.py --health
 
-# 获取评分标准
+# get ranking standard
 python3 demo_client.py --rubrics
 
-# 分析论文
+# analyse paper / article
 python3 demo_client.py --analyze /path/to/your_paper.pdf
 
-# 输出JSON格式
+# output JSON format
 python3 demo_client.py --analyze paper.pdf --json
 ```
 
 ---
 
-### 方式4️⃣：Python脚本 (集成)
+### Method Four: Python Script (Integrated)
 
 ```python
 import requests
 
-# 上传论文
+# upload article
 with open("paper.pdf", "rb") as f:
     response = requests.post(
         "http://localhost:8000/upload",
@@ -144,55 +144,51 @@ with open("paper.pdf", "rb") as f:
 
 result = response.json()
 
-# 查看结果
-print(f"总分: {result['analysis']['overall_score']['final_score']}")
-print(f"等级: {result['analysis']['overall_score']['grade']}")
-print(f"反馈: {result['analysis']['professional_feedback'][:200]}...")
+# check for result
+print(f"score: {result['analysis']['overall_score']['final_score']}")
+print(f"grade: {result['analysis']['overall_score']['grade']}")
+print(f"feedbank: {result['analysis']['professional_feedback'][:200]}...")
 ```
 
 ---
 
-## 📊 预期的分析结果
-
-系统会为每篇论文生成以下内容：
-
-### ✅ 格式检查
-- 目录是否完整
-- 页边距、字体规范
-- 参考文献格式
-- 存在的格式问题列表
-
-### ⭐ 分维度评分
-- **格式规范** (10%) → 评分 + 反馈
-- **结构完整性** (15%) → 评分 + 反馈
-- **理论基础** (25%) → 评分 + 反馈
-- **方法论** (25%) → 评分 + 反馈
-- **创新应用** (15%) → 评分 + 反馈
-- **学术写作** (10%) → 评分 + 反馈
-
-### 📈 总分与等级
-- **总体分数** (0-100)
-- **等级** (A/B/C/D/F)
-- **排名建议**
-
-### 💡 专业建议
-- 研究的学术价值评价
-- 教学实践指导意义
-- 主要亮点识别
-- 关键改进方向
-- 后续研究建议
-
-### 📊 图表分析
-- 图数量评估 ("too few", "appropriate", "too many")
-- 表数量评估
-- 标题清晰度检查
-- 与内容相关性评价
-
+## Expected Analysis Results 
+The system will generate the following content for each paper: 
+  Format Check
+- Is the table of contents complete?
+- Are the margins and font standards correct?
+- Is the reference citation format correct?
+- List of existing format issues 
+##  Dimensional Scoring
+- **Format Compliance** (10%) → Scoring + Feedback
+- **Structural Completeness** (15%) → Scoring + Feedback
+- **Theoretical Foundation** (25%) → Scoring + Feedback
+- **Methodology** (25%) → Scoring + Feedback
+- **Innovative Application** (15%) → Scoring + Feedback
+- **Academic Writing** (10%) → Scoring + Feedback
+  
+###  Total Score and Grade
+- **Overall Score** (0 - 100)
+- **Grade** (A/B/C/D/F)
+- **Ranking Recommendation**
+  
+##  Professional Advice
+- Evaluation of the academic value of the research
+- Guidance on teaching practice significance
+- Identification of main highlights
+- Key improvement directions
+- Suggestions for subsequent research
+- 
+## Chart Analysis
+- Number of Charts Evaluation ("too few", "appropriate", "too many")
+- Number of Tables Evaluation
+- Title Clarity Check
+- Relevance to Content Evaluation 
 ---
 
-## 🧪 快速验证系统
+##  Rapid Verification System 
+Verify that all components are functioning properly:
 
-验证所有组件是否正常工作：
 
 ```bash
 cd /Users/siyuzhang/Desktop/KM/paper-analyzer
@@ -200,157 +196,149 @@ source venv/bin/activate
 python test_system.py
 ```
 
-预期输出：
+Expected Output: 
 ```
-✓ 配置测试
-✓ 目录结构检查
-✓ 评分系统测试
-✓ 文本分块测试
-✓ API配置检查 (需要API Key)
-
-✅ 所有检查通过！系统准备就绪。
+✓ Configuration testing
+✓ Directory structure verification
+✓ Scoring system testing
+✓ Text segmentation testing
+✓ API configuration check (requires API Key) 
+ All checks have been passed! The system is ready.
 ```
 
 ---
 
-## ❓ 常见问题速查
+##  Quick Reference for Common Questions 
 
-| 问题 | 解决方案 |
+| Question|Solution |
 |------|--------|
-| `ModuleNotFoundError` | 检查虚拟环境激活: `source venv/bin/activate` |
-| 无法连接API | 确保服务运行: `python -m uvicorn backend/main:app --reload` |
-| API Key错误 | 检查`.env`文件格式，重启服务 |
-| 分析超时 | 论文太长，可使用更快的模型或编辑config.py |
-| PDF无法解析 | 检查PDF是否为text-based（不是扫描件） |
+| `ModuleNotFoundError` | Check activation of virtual environment: `source venv/bin/activate` |
+| Unable to connect to API  | Ensure the service is running: `python -m uvicorn backend/main:app --reload` |
+| API Key error| Check the format of the `.env` file, restart the service|
+| nalysis timeout | The paper is too long; consider using a faster model or editing config.py |
+| PDF cannot be parsed | Check if the PDF is text-based (not a scanned copy) |
 
 ---
 
-## 📁 项目文件速查
+##  Project File Quick Reference 
 
-| 文件 | 用途 |
+| file | usage |
 |------|------|
-| `start.sh` | 🚀 一键启动脚本 |
-| `test_system.py` | 🧪 系统检查工具 |
-| `demo_client.py` | 📡 命令行客户端 |
-| `frontend/index.html` | 🌐 Web上传界面 |
-| `backend/main.py` | 🔧 FastAPI应用 |
-| `backend/analyzer.py` | 🧠 LLM分析引擎 |
-| `README.md` | 📖 完整文档 |
-| `QUICKSTART.md` | ⚡ 快速开始 |
-| `PROJECT_SUMMARY.md` | 📋 项目总结 |
+| `start.sh` |  One-click startup script |
+| `test_system.py` |  System check tool |
+| `demo_client.py` |  Command-line client |
+| `frontend/index.html` |  Web upload interface |
+| `backend/main.py` |  FastAPI application |
+| `backend/analyzer.py` |  LLM analysis engine |
+| `README.md` |  Complete documentation |
+| `QUICKSTART.md` |  Quick start |
+| `PROJECT_SUMMARY.md` |  Project summary |
 
 ---
 
-## 🎓 下一步学习
+##  Next step in learning
 
-### 初级：基本使用
+### Beginner: Basic Usage 
 ```
-✓ 上传论文 → 查看评分
-✓ 理解各维度评分
-✓ 根据建议改进论文
-```
-
-### 中级：API集成
-```
-✓ 使用Python脚本批量分析
-✓ 集成到现有系统
-✓ 自定义结果展示
+✓ Upload the thesis → View the score
+✓ Understand the scores for each dimension
+✓ Improve the thesis based on the suggestions
 ```
 
-### 高级：系统扩展
+### Intermediate: API Integration 
 ```
-✓ 修改评分标准
-✓ 添加新的分析维度
-✓ 集成其他LLM模型
-✓ 部署到云服务器
+✓ Use Python scripts for batch analysis
+✓ Integrate into existing systems
+✓ Customize result presentation
+```
+
+### Advanced: System Expansion 
+```
+✓ Modify the scoring criteria
+✓ Add new analytical dimensions
+✓ Integrate other LLM models
+✓ Deploy to cloud servers
 ```
 
 ---
 
-## 💡 使用技巧
-
-### 1️⃣ 优化Token消耗
+##  Using Techniques 
+### One ：Optimize Token Consumption 
 ```python
-# 只分析论文前半部分
-text = full_text[:5000]
-# 通常足以进行评估，节省50%成本
+# Only analyze the first half of the paper text = full_text[:5000]
+# It is usually sufficient for the assessment, saving 50% of the cost
 ```
 
-### 2️⃣ 批量处理论文
+### Two： Batch processing of papers 
 ```bash
-# 创建脚本遍历论文文件夹
-for pdf in papers/*.pdf; do
-    python3 demo_client.py --analyze "$pdf" --json >> results.jsonl
+# Create a script to traverse the thesis folder for pdf in papers/*.pdf; do
+python3 demo_client.py --analyze "$pdf" --json >> results.jsonl
 done
 ```
 
-### 3️⃣ 自定义评分标准
-在`backend/rubric.py`中修改权重或标准，适应你的场景。
-
-### 4️⃣ 导出结果
-API返回JSON，可以：
-- 保存为JSON文件
-- 导入Excel分析
-- 生成Word报告（计划功能）
+### Three： Customized Scoring Criteria
+Modify the weights or standards in `backend/rubric.py` to suit your specific situation. 
+### Four： Export Results
+The API returns in JSON format, which can be:
+- Saved as a JSON file
+- Imported into Excel for analysis
+- Generated as a Word report (planning feature)
 
 ---
 
-## 📈 系统性能指标
-
-| 指标 | 实际值 |
+##  System performance indicators 
+| Indicator | Actual Value | 
 |------|------|
-| 系统启动时间 | < 3秒 |
-| 论文分析时间 | 1-2分钟 |
-| API响应时间 | < 100ms |
-| 支撑并发数 | 5-10个 |
-| 单篇论文成本 | ¥0.10-0.30 |
-| 系统占用磁盘 | ~600MB |
+| System Startup Time | < 3 seconds |
+| Paper Analysis Time | 1-2 minutes |
+| API Response Time | < 100ms |
+| Concurrent Support Capacity | 5-10 |
+| Cost per Paper | ¥0.10 - 0.30 |
+| Disk Occupancy of System | ~600MB |
 
 ---
 
-## 🌟 你现在拥有
+##  We are expected to have:
 
-✅ 完整的后端API服务  
-✅ 现代化的Web上传界面  
-✅ 专业的论文评分系统  
-✅ Claude AI深度集成  
-✅ 6维度的学术评估框架  
-✅ 详细的项目文档  
-✅ 命令行测试工具  
-✅ Python API客户端  
-
+✅ Complete backend API services
+✅ Modern web upload interface
+✅ Professional paper scoring system
+✅ Claude AI deep integration
+✅ 6-dimensional academic evaluation framework
+✅ Detailed project documentation
+✅ Command-line testing tools
+✅ Python API client
 ---
 
-## 🎉 准备好了吗？
+## Are you ready？
 
-### 立即启动：
+### now start：
 ```bash
 cd /Users/siyuzhang/Desktop/KM/paper-analyzer
 ./start.sh
 ```
 
-### 然后访问：
+### then visit：
 ```
-🌐 Web界面: file:///Users/siyuzhang/Desktop/KM/paper-analyzer/frontend/index.html
-📚 API文档: http://localhost:8000/docs
-💻 命令行: python3 demo_client.py --help
+ Web UI: file:///Users/siyuzhang/Desktop/KM/paper-analyzer/frontend/index.html
+ APIdocumentation: http://localhost:8000/docs
+ terminal command: python3 demo_client.py --help
 ```
 
-### 开始分析你的第一篇论文！ 🚀
+### Start analyzing your first paper!
 
 ---
 
-## 📞 需要帮助？
+##  Need Help？
 
-1. 查看 `README.md` - 完整功能说明
-2. 查看 `QUICKSTART.md` - 快速问题解决
-3. 运行 `test_system.py` - 诊断系统问题
-4. 查看 `backend/main.py` - 代码注释和API文档
+1. check `README.md` - Full Function Description
+2. check `QUICKSTART.md` - Quick problem-solving
+3. run `test_system.py` - diagnose system error
+4. check `backend/main.py` - Code comments and API documentation
 
 ---
 
-**祝你使用愉快！** 🎊
+**Wish this project could help to speed up your speed on reviewing papers！** 
 
-如果这个项目对你有帮助，欢迎分享和改进！
-
-更多功能即将推出... 👀
+If this project is helpful to you, please feel free to share and improve it! 
+More features are coming soon... 👀
