@@ -3,19 +3,19 @@
 **Completion Date:** May 19, 2026  
 **Project Name:** Paper Analyzer - AI-Powered Academic Assessment System  
 **Version:** 0.1.0  
-**Status:** ✅ MVP Fully Operational  
+**Status:**  MVP Fully Operational  
 
 ---
 
 ## 📦 Completed Work
 
-### ✅ Core System Framework
+###  Core System Framework
 - [x] Project directory structure design
 - [x] FastAPI + Uvicorn Web framework
 - [x] Python virtual environment configuration
 - [x] Dependency package management (requirements.txt)
 
-### ✅ Backend Modules (backend/)
+###  Backend Modules (backend/)
 ```
 ✓ main.py          - FastAPI application entry & REST API routes
 ✓ config.py        - Environment configuration management
@@ -25,7 +25,7 @@
 ✓ rubric.py        - Professional scoring system (6 dimensions)
 ```
 
-### ✅ Frontend Interface
+###  Frontend Interface
 ```
 ✓ frontend/index.html - Modern drag-and-drop upload page
   • PDF drag-and-drop upload support
@@ -34,7 +34,7 @@
   • Fully CSS responsive design
 ```
 
-### ✅ Tool Scripts
+###  Tool Scripts
 ```
 ✓ test_system.py      - System integrity check tool
 ✓ demo_client.py      - Python command-line client
@@ -42,7 +42,7 @@
 ✓ init.sh             - Initialization script
 ```
 
-### ✅ Documentation & Configuration
+###  Documentation & Configuration
 ```
 ✓ README.md           - Complete project documentation
 ✓ QUICKSTART.md       - Quick start guide
@@ -50,7 +50,7 @@
 ✓ requirements.txt    - All dependency packages
 ```
 
-### ✅ Installed Key Libraries
+###  Installed Key Libraries
 ```
 FastAPI 0.136.1       - Web framework
 Anthropic 0.102.0     - Claude API official SDK
@@ -61,7 +61,7 @@ python-docx 1.2.0     - Word document generation
 
 ---
 
-## 🎯 Core Features Overview
+##  Core Features Overview
 
 ### 1. **Intelligent PDF Analysis**
 ```python
@@ -114,7 +114,7 @@ POST /generate-report - Report generation (in development)
 
 ---
 
-## 🚀 Quick Usage
+##  Quick Usage
 
 ### Option A: One-Click Startup (Fastest)
 
@@ -154,7 +154,7 @@ python3 demo_client.py --analyze /path/to/paper.pdf
 
 ---
 
-## 📊 Project Statistics
+##  Project Statistics
 
 | Metric | Value |
 |--------|-------|
@@ -169,7 +169,7 @@ python3 demo_client.py --analyze /path/to/paper.pdf
 
 ---
 
-## 💰 Cost Analysis
+##  Cost Analysis
 
 ### API Call Cost (Claude Haiku 3.5)
 ```
@@ -189,7 +189,7 @@ Monthly 100 papers       → ~$0.10-0.30
 
 ---
 
-## 📋 API Call Examples
+##  API Call Examples
 
 ### Python Script
 ```python
@@ -230,7 +230,7 @@ fetch("http://localhost:8000/upload", {
 
 ---
 
-## 🔧 Common Operations
+##  Common Operations
 
 ### Modify Scoring Weights
 Edit `backend/rubric.py` in the `get_default_rubric()` method:
@@ -272,13 +272,13 @@ model="claude-3-haiku-20240307"  # Change to other models
 
 ---
 
-## 🎓 Learning Resources
+##  Learning Resources
 
 ### Project Documentation
-- 📖 `README.md` - Complete feature documentation
-- 🚀 `QUICKSTART.md` - Quick start guide
-- 💻 `backend/main.py` - API route code comments
-- 🔍 `backend/analyzer.py` - LLM integration examples
+-  `README.md` - Complete feature documentation
+-  `QUICKSTART.md` - Quick start guide
+-  `backend/main.py` - API route code comments
+-  `backend/analyzer.py` - LLM integration examples
 
 ### External Resources
 - [Claude API Official Documentation](https://docs.anthropic.com/)
@@ -287,81 +287,81 @@ model="claude-3-haiku-20240307"  # Change to other models
 
 ---
 
-## 🚦 Phase 2 开发计划
+##  Phase 2 Development plan
 
-### 本周任务
+### this week's task (5.18 - 5.24)
 ```
-□ Word/PDF报告导出
-□ 相似度查重API集成
-□ 自定义rubric编辑界面
-□ 错误处理优化
-```
-
-### 下周任务
-```
-□ 向量数据库集成(PostgreSQL + pgvector)
-□ React前端完全重写
-□ 用户认证系统
-□ 历史记录和数据持久化
-□ Docker容器化
+- Export of Word/PDF reports
+- Integration of similarity checking and duplicate detection API
+- Customized rubric editing interface
+- Optimization of error handling
 ```
 
-### 长期计划
+### Next week's task
 ```
-□ 云端部署 (AWS/Heroku)
-□ 多语言支持
-□ 批量处理功能
-□ 专属数据仓库
-□ 教师协作工具
-```
-
----
-
-## 🌟 如何充分利用这个系统
-
-### 1️⃣ **对于教师**
-```
-用途：批量评估学生论文
-操作：
-  • 上传论文PDF
-  • 获得结构化评分
-  • 导出反馈报告
-时间节省：从2小时/篇 → 2分钟/篇
+□ Vector database integration (PostgreSQL + pgvector)
+□ Complete rewrite of the React front-end
+□ User authentication system
+□ Historical records and data persistence
+□ Docker containerization
 ```
 
-### 2️⃣ **对于研究生**
+### Long-term Plan
 ```
-用途：自我评估论文质量
-操作：
-  • 在投稿前上传初稿
-  • 获得改进建议
-  • 迭代优化
-改进周期：从几周 → 几天
-```
-
-### 3️⃣ **对于期刊编辑**
-```
-用途：初审论文筛选
-操作：
-  • 批量导入论文
-  • 快速评分排序
-  • 重点审查高分稿件
-工作量：减少70%
-```
-
-### 4️⃣ **对于开发者**
-```
-用途：学习LLM应用开发
-学习点：
-  • Claude API集成
-  • FastAPI框架
-  • LLM应用模式
-扩展：可修改和定制各模块
+□ Cloud deployment (AWS/Heroku)
+□ Multi-language support
+□ Batch processing function
+□ Dedicated data warehouse
+□ Teacher collaboration tool
 ```
 
 ---
 
-## 📞 need help？
+##  How to make use of this system
+
+### 1️⃣ **for lecturers**
+```
+Purpose: To conduct batch assessment of student papers
+Operation:
+• Upload PDF of the paper
+• Obtain structured scoring
+• Export feedback report
+Time saving: From 2 hours per paper → 2 minutes per paper
+```
+
+### 2️⃣ **For PG/UG students**
+```
+Purpose: Self-assessment of paper quality
+Procedure:
+• Upload the initial draft before submission
+• Obtain improvement suggestions
+• Iterate and optimize
+Improvement cycle: From several weeks → several days
+```
+
+### 3️⃣ **For journal editors**
+```
+Purpose: Preliminary review of papers
+Operation:
+• Batch import of papers
+• Rapid scoring and sorting
+• Thorough review of high-scoring manuscripts
+Workload: Reduced by 40-50%
+```
+
+### 4️⃣ **For developer**
+```
+Purpose: Learn LLM application development
+Learning points:
+• Claude API integration
+• FastAPI framework
+• LLM application mode
+Extensions: Modules can be modified and customized
+```
+
+---
+
+##  need help？
 
 ### check system status
 ```bash
@@ -383,14 +383,14 @@ DEBUG=true python -m uvicorn backend/main:app --reload --log-level debug
 
 ---
 
-## ✨ project highlights
+##  project highlights
 
-✅ **Fully localized** - Not relying on third-party rating platforms
-✅ **professional tailor-made** - Designed based on the expert knowledge of pedagogy
-✅ **easy to enlarge** - A clear modular architecture 
-✅ **cost-less** - API cost < 1 dollar/file  
-✅ **Plug and play**  - out-of-the-box MVP 
-✅**active iteration **- continuous improvement and new features
+ **Fully localized** - Not relying on third-party rating platforms
+ **professional tailor-made** - Designed based on the expert knowledge of pedagogy
+ **easy to enlarge** - A clear modular architecture 
+ **cost-less** - API cost < 1 dollar/file  
+ **Plug and play**  - out-of-the-box MVP 
+**active iteration **- continuous improvement and new features
 
 ---
 
@@ -405,10 +405,10 @@ now you have an **A complete AI-driven paper evaluation system**！
 4. **get score ranking** →Receive professional feedback within 1-2 minutes
 
 ### Expected results:
-- 📊 detailed scoring report
-- 💡 professional improvement suggestions
-- ✨ automated academic assessment
-- 🚀 significantly enhance teaching efficiency
+-  detailed scoring report
+-  professional improvement suggestions
+-  automated academic assessment
+-  significantly enhance teaching efficiency
 
 ---
 
