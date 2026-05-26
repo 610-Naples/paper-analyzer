@@ -1,10 +1,10 @@
-# 📄 Paper Analyzer - AI-Powered Academic Paper Assessment System
+#  Paper Analyzer - AI-Powered Academic Paper Assessment System
 
 **An intelligent thesis evaluation platform integrating Claude AI for professional academic assessment and feedback.**
 
 ---
 
-## 🎯 Project Overview
+##  Project Overview
 
 ### Problem Statement
 Academic paper evaluation is a critical but time-consuming task:
