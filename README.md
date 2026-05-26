@@ -8,21 +8,21 @@
 
 ### Problem Statement
 Academic paper evaluation is a critical but time-consuming task:
-- ❌ Manual review takes **6-12 hours per thesis**
-- ❌ Evaluation criteria **lack standardization** across different reviewers
-- ❌ Students receive **limited, inconsistent feedback** for improvement
-- ❌ Limited scalability for institutions evaluating hundreds of papers
+- NO Manual review takes **6-12 hours per thesis**
+- NO Evaluation criteria **lack standardization** across different reviewers
+- NO Students receive **limited, inconsistent feedback** for improvement
+- NO Limited scalability for institutions evaluating hundreds of papers
 
 ### Our Solution
 **Paper Analyzer** automates and standardizes academic evaluation through:
-- ⚡ **Automated Analysis** - Complete thesis review in 1-2 minutes
-- 📊 **Standardized Scoring** - 6-dimensional rubric-based evaluation
-- 💡 **Professional Insights** - AI-generated improvement recommendations
-- 🎓 **Institutional Quality** - Production-ready backend architecture
+-  **Automated Analysis** - Complete thesis review in 1-2 minutes
+-  **Standardized Scoring** - 6-dimensional rubric-based evaluation
+-  **Professional Insights** - AI-generated improvement recommendations
+-  **Institutional Quality** - Production-ready backend architecture
 
 ---
 
-## ✨ Key Features
+##  Key Features
 
 ### 1. **Intelligent PDF Processing**
 - Automatic extraction of thesis content and structure
@@ -62,7 +62,7 @@ Academic paper evaluation is a critical but time-consuming task:
 
 ---
 
-## 🏗️ System Architecture
+##  System Architecture
 
 ```
 User Upload PDF
@@ -82,7 +82,7 @@ Report Generation (python-docx)
 
 ---
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 ### Backend
 - **Framework**: FastAPI 0.136+ (async REST API)
@@ -117,7 +117,7 @@ aiofiles>=23.2.0          # Async file operations
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 - Python 3.8 or higher
@@ -203,7 +203,7 @@ python demo_client.py path/to/thesis.pdf
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 paper-analyzer/
@@ -239,9 +239,9 @@ paper-analyzer/
 
 ---
 
-## 📊 Project Progress
+##  Project Progress
 
-### ✅ Completed Components
+###  Completed Components
 
 ```
 OVERALL PROGRESS: ████████████████████ 100%
@@ -272,7 +272,7 @@ OVERALL PROGRESS: ████████████████████ 1
 
 ---
 
-## 💰 Cost Analysis
+##  Cost Analysis
 
 ### API Usage & Pricing
 **Claude API Pricing:**
@@ -294,10 +294,10 @@ OVERALL PROGRESS: ████████████████████ 1
 ## 🔐 Security & Best Practices
 
 ### API Key Management
-- ✅ Never commit `.env` file to version control
-- ✅ Use `.env.example` as template
-- ✅ Rotate keys regularly in production
-- ✅ Store keys in secure CI/CD secrets
+-  Never commit `.env` file to version control
+-  Use `.env.example` as template
+-  Rotate keys regularly in production
+-  Store keys in secure CI/CD secrets
 
 ### File Handling
 - Uploaded PDFs stored in temporary directory
@@ -307,7 +307,7 @@ OVERALL PROGRESS: ████████████████████ 1
 
 ---
 
-## 📚 API Documentation
+##  API Documentation
 
 ### Key Endpoints
 
@@ -351,7 +351,7 @@ For complete API documentation, start the server and visit: `http://localhost:80
 
 ---
 
-## 🧪 Testing
+##  Testing
 
 ### System Verification
 ```bash
@@ -374,7 +374,7 @@ python demo_client.py sample_thesis.pdf
 
 ---
 
-## 🐳 Docker Deployment (Optional)
+##  Docker Deployment (Optional)
 
 ### Build Container
 ```bash
@@ -390,7 +390,7 @@ Service runs on: `http://localhost:8000`
 
 ---
 
-## 📖 Documentation Files
+##  Documentation Files
 
 - **[QUICKSTART.md](./QUICKSTART.md)** - 5-minute setup guide
 - **[DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md)** - Production deployment instructions
@@ -399,7 +399,7 @@ Service runs on: `http://localhost:8000`
 
 ---
 
-## 🎓 Use Cases
+##  Use Cases
 
 ### For Educational Institutions
 - Automated thesis evaluation system
@@ -421,7 +421,7 @@ Service runs on: `http://localhost:8000`
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions are welcome! To contribute:
 
@@ -433,21 +433,21 @@ Contributions are welcome! To contribute:
 
 ---
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ---
 
-## 👥 Authors
+##  Authors
 
 **Siyu Zhang**
-- GitHub: [@siyuzhang](https://github.com/siyuzhang)
-- Email: contact@example.com
+- GitHub: [@610-Naples](https://github.com/610-Naples)
+- Email: CST2209178@xmu.edu.my / nancy1811@qq.com
 
 ---
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - Anthropic Claude AI team for LLM capabilities
 - FastAPI community for excellent web framework
@@ -456,7 +456,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-## 📞 Support & Contact
+##  Support & Contact
 
 - **Issues**: Open an issue on GitHub
 - **Documentation**: See docs/ folder
@@ -465,9 +465,9 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-## 🗓️ Version History
+##  Version History
 
-### v0.1.0 (May 2026) - Initial Release ✅
+### v0.1.0 (May 2026) - Initial Release 
 - Complete backend implementation
 - PDF parsing and analysis
 - Claude AI integration
@@ -478,5 +478,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ---
 
 **Last Updated:** May 2026  
-**Status:** Production Ready ✅  
+**Status:** Production Ready   
 **Active Development:** Yes
