@@ -1,14 +1,14 @@
-# 🚀 Quick Start Guide
+#  Quick Start Guide
 
 Get the Paper Analyzer system running in 3 minutes.
 
-## Step 1️⃣: Get Claude API Key
+## Step One: Get Claude API Key
 
 Visit [https://console.anthropic.com/](https://console.anthropic.com/) to get a free API Key
 
 New accounts receive **$5 free credits** - enough to test 200+ paper analyses.
 
-## Step 2️⃣: Configure Environment Variables
+## Step Two: Configure Environment Variables
 
 ```bash
 cd /Users/siyuzhang/Desktop/KM/paper-analyzer
@@ -24,7 +24,7 @@ DEBUG=True
 PORT=8000
 ```
 
-### Step 3️⃣: Start Backend Service
+### Step Three: Start Backend Service
 
 ```bash
 # Activate virtual environment
@@ -43,7 +43,7 @@ Expected output:
 ✓ Reload enabled
 ```
 
-### Step 4️⃣: Test API
+### Step Four: Test API
 
 **Open a new terminal window:**
 
@@ -55,7 +55,7 @@ curl http://localhost:8000/health
 open http://localhost:8000/docs
 ```
 
-### Step 5️⃣: Upload Paper for Analysis
+### Step Five: Upload Paper for Analysis
 
 **Option 1: Using Web Interface**
 
@@ -93,7 +93,7 @@ curl -X POST http://localhost:8000/upload \
 
 ---
 
-## 📊 System Architecture Diagram
+##  System Architecture Diagram
 
 ```
 ┌─────────────────────────────────────────┐
@@ -131,7 +131,7 @@ curl -X POST http://localhost:8000/upload \
 
 ---
 
-## 🧪 System Testing
+##  System Testing
 
 Verify all components are working correctly:
 
@@ -158,7 +158,7 @@ Paper Intelligence Assessment System - System Check
 
 ---
 
-## 📁 Project Structure Overview
+##  Project Structure Overview
 
 ```
 paper-analyzer/
@@ -185,7 +185,7 @@ paper-analyzer/
 
 ---
 
-## 🎯 Core Functionality Workflow
+##  Core Functionality Workflow
 
 ### Paper Upload → Analysis → Return Results
 
@@ -242,7 +242,7 @@ paper-analyzer/
 
 ---
 
-## 🔑 6 Scoring Dimensions
+##  6 Scoring Dimensions
 
 ### 1. Format Specification (10%)
 - Proper formatting and layout
@@ -279,7 +279,7 @@ paper-analyzer/
 
 ---
 
-## ⚡ Quick Troubleshooting
+##  Quick Troubleshooting
 
 ### Issue: API Key Error
 ```bash
@@ -310,17 +310,17 @@ which python
 
 ---
 
-## 📞 Support & Documentation
+##  Support & Documentation
 
-- **Complete Guide**: See [README_EN.md](README_EN.md)
+- **Complete Guide**: See [README.md](README.md)
 - **Deployment Guide**: See [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)
 - **API Documentation**: Visit `http://localhost:8000/docs` when server is running
 - **Issues**: Create GitHub Issues for bug reports
 
 ---
 
-## 🎉 You're Ready!
+##  You're Ready!
 
 You now have a fully functional AI-powered paper evaluation system. Start uploading papers and analyzing them with Claude's advanced capabilities!
 
-**Happy analyzing!** 📄✨
+**Happy analyzing!** 
